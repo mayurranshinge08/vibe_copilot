@@ -13,6 +13,12 @@ class HomePage extends StatefulWidget {
 
 class _HomePageState extends State<HomePage> {
   int _selectedIndex = 0;
+  bool _isClicked = false;
+  void _toggleColor() {
+    setState(() {
+      _isClicked = !_isClicked;
+    });
+  }
 
   final List<IconData> _icons = [
     Icons.plumbing,
@@ -345,24 +351,46 @@ class _HomePageState extends State<HomePage> {
                               child: Row(
                                 spacing: 10,
                                 children: [
-                                  Container(
-                                    height: 22,
-                                    width: 50,
-                                    decoration: BoxDecoration(
-                                      color: Colors.green,
-                                      border: Border.all(color: Colors.black),
-                                      borderRadius: BorderRadius.circular(10),
+                                  GestureDetector(
+                                    onTap: () {
+                                      setState(() {
+                                        _toggleColor();
+                                      });
+                                    },
+                                    child: Container(
+                                      height: 22,
+                                      width: 50,
+
+                                      decoration: BoxDecoration(
+                                        color:
+                                            _isClicked
+                                                ? Colors.green
+                                                : Colors.red,
+                                        border: Border.all(color: Colors.black),
+                                        borderRadius: BorderRadius.circular(10),
+                                      ),
+                                      child: Center(child: Text("Pass")),
                                     ),
-                                    child: Center(child: Text("Pass")),
                                   ),
-                                  Container(
-                                    height: 22,
-                                    width: 50,
-                                    decoration: BoxDecoration(
-                                      border: Border.all(color: Colors.black),
-                                      borderRadius: BorderRadius.circular(10),
+                                  GestureDetector(
+                                    onTap: () {
+                                      setState(() {
+                                        _toggleColor();
+                                      });
+                                    },
+                                    child: Container(
+                                      height: 22,
+                                      width: 50,
+                                      decoration: BoxDecoration(
+                                        color:
+                                            _isClicked
+                                                ? Colors.red
+                                                : Colors.green,
+                                        border: Border.all(color: Colors.black),
+                                        borderRadius: BorderRadius.circular(10),
+                                      ),
+                                      child: Center(child: Text("Fail")),
                                     ),
-                                    child: Center(child: Text("Fail")),
                                   ),
                                   Container(
                                     height: 22,
