@@ -31,6 +31,9 @@ class _CommentLogSwitcherState extends State<CommentLogSwitcher> {
                 ),
               ),
             ),
+
+            listviewWidget(),
+
             SizedBox(height: 10),
 
             Container(
@@ -164,6 +167,35 @@ class _CommentLogSwitcherState extends State<CommentLogSwitcher> {
           ],
         ),
       ),
+    );
+  }
+
+  Row listviewWidget() {
+    return Row(
+      spacing: 3,
+      children: [
+        Icon(Icons.camera_alt),
+        Image.network(
+          height: 90,
+          width: 90,
+          'https://media.istockphoto.com/id/1411304340/photo/two-modern-buildings-with-glass-windows-architecture-design-of-buildings-office-space-houses.jpg?s=612x612&w=0&k=20&c=KQA6R0B5lp8-rcdFO9knPiSz96NiZBCJQBQMlMoXT7U=',
+        ),
+        Image.network(
+          height: 90,
+          width: 90,
+          'https://media.istockphoto.com/id/1439162947/photo/silhouette-of-engineer-and-worker-team-on-building-site-construction-site-at-sunset-in.jpg?s=612x612&w=0&k=20&c=5zV1s_lfyASZxEQtbPG6SBg0NjsI2ajhFMsTeiTZmmA=',
+        ),
+        Image.network(
+          height: 90,
+          width: 90,
+          'https://www.hashmicro.com/blog/wp-content/uploads/2022/10/Tools-16.jpg',
+        ),
+        Image.network(
+          height: 90,
+          width: 90,
+          'http://thikedaar.com/update/wp-content/uploads/2024/10/construction-process.webp',
+        ),
+      ],
     );
   }
 
