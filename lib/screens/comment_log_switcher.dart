@@ -215,7 +215,7 @@ class _CommentLogSwitcherState extends State<CommentLogSwitcher> {
           "Door lock is not working.",
           "17/12/2024 17:48",
           Colors.transparent,
-          "",
+          "https://randomuser.me/api/portraits/men/32.jpg",
         ),
         _commentRow(
           "Sushil Agarwal",
